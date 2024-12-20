@@ -22,9 +22,9 @@ app.get('/', (req, res) => {
 
 // Настройка подключения к базе данных
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: "postgresql://postgres:ybouioztekYRZOwDhuCVUWDDrYwfGYgB@junction.proxy.rlwy.net:43499/railway",
     ssl: {
-        rejectUnauthorized: false,
+        rejectUnauthorized: false, // Включите SSL для безопасности
     },
 });
 
