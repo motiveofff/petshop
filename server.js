@@ -8,28 +8,26 @@ const cors = require("cors");
 const app = express();
 const PORT = 3000;
 
-// Настройка подключения к базе данных PostgreSQL
+
+// Настройка подключения к базе данных
 const pool = new Pool({
-  user: "postgres",         // Имя пользователя базы данных
-  host: "localhost",        // Адрес базы данных
-  database: "petshop",      // Имя базы данных
-  password: "1234",     // Пароль
-  port: 5432,               // Порт PostgreSQL
+    connectionString: "postgresql://postgres:TLcTxBzltZdjZjMIAYRfgyhRYnbSBszz@autorack.proxy.rlwy.net:23303/railway",
+    ssl: {
+        rejectUnauthorized: false, // Включите SSL для безопасности
+    },
 });
 
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
 
-// Проверка подключения к базе данных
-pool.connect((err, client, release) => {
-  if (err) {
-    console.error("Ошибка подключения к базе данных:", err.stack);
-    process.exit(1);  // Завершить приложение, если нет подключения
-  } else {
-    console.log("Подключение к базе данных успешно!");
-    release();
-  }
+// Проверка подключения
+pool.connect((err) => {
+    if (err) {
+        console.error("Ошибка подключения к базе данных:", err.stack);
+    } else {
+        console.log("Подключение к базе данных успешно!");
+    }
 });
 
 // === Регистрация пользователя ===
