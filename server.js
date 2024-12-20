@@ -8,6 +8,16 @@ const cors = require("cors");
 const app = express();
 const PORT = 3000;
 
+const path = require('path');
+
+// Обслуживание статических файлов из корневой директории
+app.use(express.static(path.join(__dirname)));
+
+// Маршрут для index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 
 // Настройка подключения к базе данных
 const pool = new Pool({
