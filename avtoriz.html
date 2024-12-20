@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.svg" alt="" class="logo__img">
+                </a>
+                <div class="header__text">Хвост и Лапки</div>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__list-item"><a href="index.html" class="menu__list-link">Главная</a></li>
+                        <li class="menu__list-item"><a href="katalog.html" class="menu__list-link">Каталог</a></li>
+                        <li class="menu__list-item"><a href="contacts.html" class="menu__list-link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__buttons">
+                    <a href="registr.html" class="btn">Регистрация</a>
+                    <a href="avtoriz.html" class="btn">Вход</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-av">
+        <div class="circle"></div>
+        <div class="av-form-conteiner">
+            <h1 class="form-title-av">Вход</h1>
+            <form id="loginForm">
+                <div class="form-field-av">
+                    <input type="email" id="email" placeholder="Почта" required>
+                </div>
+                <div class="form-field-av">
+                    <input type="password" id="password" placeholder="Пароль" required>
+                </div>
+                <div class="form-buttons-av">
+                    <button type="submit" class="button">Войти</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__left">
+                    <p class="footer__menu-p">О нас</p>
+                    <div class="footer__text">
+                        Мы – интернет-магазин, созданный для тех, кто заботится о своих 
+                        пушистых друзьях. У нас вы найдете качественные корма, игрушки, 
+                        аксессуары и товары для здоровья для котиков, собак и других 
+                        любимцев. Мы подбираем только проверенные бренды и тщательно 
+                        следим за ассортиментом, чтобы у вашего питомца всегда было всё 
+                        самое лучшее.
+                    </div>
+                </div>
+                <div class="footer__right">
+                    <p class="footer__menu-p">Подпишитесь на наш телеграмм канал</p>
+                    <a href="https://t.me/petshopru" class="footer__menu-list-link">
+                        t.me/petshopru
+                        <img src="img/telegramm_logo.svg" alt="" class="telegramm_logo">
+                    </a>
+                </div>
+            </div>
+            <div class="copy__nav">
+                <div class="copy__nav-text">© 2024 Хвост и Лапки. Все права защищены.</div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="js/login.js"></script>
+</body>
+</html>

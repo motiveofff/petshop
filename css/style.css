@@ -1,0 +1,822 @@
+html{
+    box-sizing: border-box;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body{
+    height: 100%;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    max-width: 1627px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+body{
+    font-family: 'Merriweather', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.header{
+    background-color: #010204;
+}
+
+.header-main{
+    background-color: transparent;
+    position: absolute;
+    z-index: 10;
+}
+
+.header__inner{
+    padding-top: 40px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    margin-right: 55px;
+    margin-left: 40px;
+}
+
+.header__text{
+    font-size: 25px;
+    color: #fff;
+    font-style: italic;
+    font-weight: 700;
+    margin-right: 254px;
+}
+
+.cart{
+    margin-left: 55px;
+    margin-right: 55px;
+}
+
+
+.menu__list{
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    padding: 0;
+    margin-right: 100px;
+}
+
+.menu__list-link{
+    color: #fff;
+    font-weight: 700;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 51px;          /* Отступ между кнопками */
+}
+
+.btn {
+    padding: 10px 20px;   /* Внутренний отступ для кнопок */
+    background-color: #7F5AF0; /* Цвет фона кнопок */
+    color: #fff;           /* Цвет текста кнопок */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px;    /* Закругленные края */
+}
+
+.footer{
+    background-color: #242629;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px; /* Отступ между левой и правой частью */
+}
+
+.footer__left {
+    width: 980px;
+    height: 506px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.footer__menu-p {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 49px;
+}
+
+.footer__text {
+    font-size: 30px;
+    color: #fff;
+    max-width: 980px;
+    margin-bottom: 0;
+}
+
+.footer__menu-list-link {
+    color: #7F5AF0;
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.copy__nav{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.telegram-icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.main{
+    flex-grow: 1;
+}
+
+.top{
+    color: #fff;
+    text-align: left;
+    margin-left: 140px;
+    max-width: 880px;
+    padding-top: 250px;
+    padding-bottom: 80px;
+    position: absolute;
+    z-index: 5;
+}
+
+.title{
+    padding-bottom: 40px;
+    font-size: 80px;
+    font-weight: 1000;
+    color: #94A1B2;
+}
+
+.title__text{
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.swiper-slide{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 900px;
+    width: 90%;
+}
+
+.razd__img{
+    height: 100%;
+    width: 100%;
+}
+
+/* Сетка товаров index Выгодно*/
+
+.favorite {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание */
+    align-items: center;    /* Центрирование содержимого по горизонтали */
+    justify-content: center; /* Центрирование по вертикали, если секция имеет большую высоту */
+    padding: 40px 0;
+    background-color: #010204;
+}
+
+.section-title{
+    background-color: #010204;
+    color: #7F5AF0;
+    font-size: 70px;
+    font-style: italic;
+    justify-content: center;
+    align-content: center;
+}
+
+.favorite__grid {
+    display: grid;                /* Включаем Grid Layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки, равные по ширине */
+    gap: 40px;                    /* Отступы между карточками */
+    grid-auto-rows: 1fr;          /* Автоматически подстраиваем высоту строк */
+}
+
+.favorite__card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Пример тени для карточки */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.favorite__card img {
+    width: 100%;
+    height: 417px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.favorite__card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.favorite__card p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.favorite__card button {
+    padding: 10px 20px;
+    background-color: #7F5AF0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*Контакты*/
+
+.contacts{
+    padding: 80px 0 40px;
+    background-color: #010204;
+    position: relative;
+}
+
+.contacts__title{
+    text-align: center;
+    font-size: 65px;
+}
+
+.contacts__text{
+    color: #fff;
+    text-align: left;
+    font-size: 25px;
+    padding: 50px 80px;
+    position: relative;
+    z-index: 5;
+}
+.contacts__telephone{
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    padding: 50px 80px;
+    position: relative;
+    z-index: 5;
+}
+
+.contacts__adres{
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    padding: 50px 80px;
+    position: relative;
+    z-index: 5;
+}
+
+.contacts__email{
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    padding: 50px 80px;
+    position: relative;
+    z-index: 5;
+}
+
+form{
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form__input{
+    width: 350px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    border: 5px solid #7F5AF0;
+    margin-bottom: 50px;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #010204;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder{
+    font-family: 'Merriweather', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #010204;
+    opacity: 0.5;
+}
+
+.form__textarea{
+    width: 100%;
+    resize: none;
+    padding: 28px 20px;
+    height: 480px;
+    border: 5px solid #7F5AF0;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #010204;
+    margin-bottom: 50px;
+}
+
+.form__btn{
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #7F5AF0;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 13px 61px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+input{
+    height: 45px;
+    width: 100%;
+    color: #3B5983;
+    font-size: 14px;
+    line-height: 16px;
+    border: 2px solid #E9F2FF;
+    border-radius: 5px;
+    padding-left: 25px;
+}
+
+input:focus{
+    outline: none;
+    border: 2px solid #c1d9fd;
+}
+
+.main-reg{
+    background-color: #7F5AF0;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle{
+    position: absolute;
+    z-index: 1;
+    width: 2534px;
+    height: 2534px;
+    border-radius: 50%;
+    background: #f7faff;
+    box-shadow: 0px 4px 70px 6px rgba(217, 229, 255, 0.25);
+    animation-name: fadeCircle;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeCircle {
+    0%{
+        width: 2534px;
+        height: 2534px;
+    }
+    25%{
+        width: 2000px;
+        height: 2000px;
+    }
+    50%{
+        width: 1500px;
+        height: 1500px;
+    }
+    75%{
+        width: 1000px;
+        height: 1000px;
+    }
+    100%{
+        width: 534px;
+        height: 534px;
+    }
+}
+
+.register-form-conteiner{
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+    max-width: 415px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 6px 50px rgba(137, 162, 215, 0.8);
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    animation-name: fadeForm;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeForm {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: .25;
+    }
+    50%{
+        opacity: .5;
+    }
+    75%{
+        opacity: .75;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.form-title-reg{
+    color: #305070;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 38px;
+}
+
+.form-field{
+    margin-bottom: 13px;
+}
+
+.form-buttons{
+    max-width: 1000px;
+    padding-left: 105px;
+}
+
+/*-----------------------------------------------------------------------*/
+
+.main-av{
+    background-color: #7F5AF0;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.av-form-conteiner{
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+    max-width: 415px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 6px 50px rgba(137, 162, 215, 0.8);
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    animation-name: fadeForm2;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeForm2 {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: .25;
+    }
+    50%{
+        opacity: .5;
+    }
+    75%{
+        opacity: .75;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.form-title-av{
+    color: #305070;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 38px;
+}
+
+.form-field-av{
+    margin-bottom: 13px;
+}
+
+.form-buttons-av{
+    max-width: 1000px;
+    padding-left: 150px;
+}
+
+.button{
+    display: block;
+    height: 45px;
+    background: #7F5AF0;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.button:hover{
+    background-color: #0d6cf2;
+}
+
+/*каталог*/
+.main{
+    flex-grow: 1;
+}
+
+.container2 {
+    max-width: 1627px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.katalog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    background-color: #010204;
+}
+
+.section-title-kt {
+    background: #010204;
+    color: #7F5AF0;
+    font-size: 80px;
+    font-style: italic;
+    justify-content: center;
+    align-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-title-animals {
+    color: #fff;
+    font-size: 70px;
+    justify-content: center;
+    align-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+/* Сетка товаров коты */
+
+.cats {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание */
+    align-items: center;    /* Центрирование содержимого по горизонтали */
+    justify-content: center; /* Центрирование по вертикали, если секция имеет большую высоту */
+    padding: 40px 0;
+    background-color: #94A1B2;
+}
+
+.cats__grid {
+    display: grid;                /* Включаем Grid Layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки, равные по ширине */
+    gap: 40px;                    /* Отступы между карточками */
+    grid-auto-rows: 1fr;          /* Автоматически подстраиваем высоту строк */
+}
+
+.cats__card {
+    background-color: #141415;
+    color: #fff;
+    padding: 20px;
+    padding-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Пример тени для карточки */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.cats__card img {
+    width: 398px;
+    height: 417px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.cats__card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.cats__card p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Сетка товаров собаки */
+
+.dogs {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание */
+    align-items: center;    /* Центрирование содержимого по горизонтали */
+    justify-content: center; /* Центрирование по вертикали, если секция имеет большую высоту */
+    padding: 40px 0;
+    background-color: #94A1B2;
+}
+
+.dogs__grid {
+    display: grid;                /* Включаем Grid Layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки, равные по ширине */
+    gap: 40px;                    /* Отступы между карточками */
+    grid-auto-rows: 1fr;          /* Автоматически подстраиваем высоту строк */
+}
+
+.dogs__card {
+    background-color: #141415;
+    color: #fff;
+    padding: 20px;
+    padding-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Пример тени для карточки */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.dogs__card img {
+    width: 398px;
+    height: 417px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.dogs__card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.dogs__card p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Сетка товаров птицы */
+
+.birds {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание */
+    align-items: center;    /* Центрирование содержимого по горизонтали */
+    justify-content: center; /* Центрирование по вертикали, если секция имеет большую высоту */
+    padding: 40px 0;
+    background-color: #94A1B2;
+}
+
+.birds__grid {
+    display: grid;                /* Включаем Grid Layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки, равные по ширине */
+    gap: 40px;                    /* Отступы между карточками */
+    grid-auto-rows: 1fr;          /* Автоматически подстраиваем высоту строк */
+}
+
+.birds__card {
+    background-color: #141415;
+    color: #fff;
+    padding: 20px;
+    padding-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Пример тени для карточки */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.birds__card img {
+    width: 398px;
+    height: 417px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.birds__card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.birds__card p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/*---------Product-------------------------------*/
+
+/* Главный контейнер */
+.main-product {
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+
+/* Заголовок продукта */
+#product-name {
+    font-size: 32px;
+    color: #222;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Детали продукта */
+.product-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Изображение продукта */
+.product-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Информация о продукте */
+.product-info {
+    flex: 1;
+    max-width: 600px;
+}
+
+.product-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.product-info strong {
+    color: #444;
+    font-weight: bold;
+}
+
+.product-info span {
+    color: #555;
+}
+
+/* Цена продукта */
+#product-price {
+    font-size: 24px;
+    color: #7F5AF0; 
+    font-weight: bold;
+}

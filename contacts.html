@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=196164d1-1729-4e21-939d-c475eec4e92c&lang=ru_RU" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a href="index.html" class="logo">
+                        <img src="img/logo.svg" alt="" class="logo__img">
+                    </a>
+                    <div class="header__text">Хвост и Лапки</div>
+                    <nav class="menu">
+                        <ul class="menu__list">
+                            <li class="menu__list-item"><a href="index.html" class="menu__list-link">Главная</a></li>
+                            <li class="menu__list-item"><a href="katalog.html" class="menu__list-link">Каталог</a></li>
+                            <li class="menu__list-item"><a href="contacts.html" class="menu__list-link">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header__buttons">
+                        <a href="registr.html" class="btn">Регистрация</a>
+                        <a href="avtoriz.html" class="btn">Вход</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="contacts">
+                <div class="conteiner">
+                    <h2 class="section-title contacts__title">Контакты</h2>
+                    <p class="contacts__text">
+                        Мы – интернет-магазин, созданный для тех, кто заботится о своих 
+                        пушистых друзьях. У нас вы найдете качественные корма, игрушки, 
+                        аксессуары и товары для здоровья для котиков, собак и других 
+                        любимцев. Мы подбираем только проверенные бренды и тщательно 
+                        следим за ассортиментом, чтобы у вашего питомца всегда было всё 
+                        самое лучшее.
+                    </p>
+                    <p class="contacts__text" style="color: #7F5AF0;">Свяжитесь с нами:</p>
+                    <p class="contacts__telephone"><strong>Телефон:</strong> +7 (123) 456-78-90</p>
+                    <p class="contacts__adres"><strong>Адрес:</strong> Невский проспект, 21, Санкт-Петербург, 191186</p>
+                    <p class="contacts__email"><strong>Email:</strong> info@hvostandlapki.ru</p>
+                    <form class="form" action="#">
+                        <input class="form__input" type="text" placeholder="Имя">
+                        <input class="form__input" type="email" placeholder="E-mail">
+                        <textarea class="form__textarea" placeholder="Ваш текст"></textarea>
+                        <button class="form__btn" type="submit">Отправить</button>
+                    </form>
+                </div>
+            </section>
+            <div id="map" style="width: 100%; height: 500px;"></div>
+            <script>
+                ymaps.ready(init);
+                function init() {
+                    const map = new ymaps.Map("map", {
+                        center: [59.935, 30.325], // Центр карты СПб
+                        zoom: 15
+                    });
+
+                    const address = "Невский проспект, 21, Санкт-Петербург, 191186";
+
+                    const geocodeURL = `https://geocode-maps.yandex.ru/1.x/?apikey=196164d1-1729-4e21-939d-c475eec4e92c&format=json&geocode=${encodeURIComponent(address)}`;
+                    fetch(geocodeURL)
+                        .then(response => response.json())
+                        .then(data => {
+                            const geoObject = data.response.GeoObjectCollection.featureMember[0];
+                            if (geoObject) {
+                                const coordinates = geoObject.GeoObject.Point.pos.split(' ').map(Number).reverse();
+                                
+                                // Добавляем метку на карту
+                                const placemark = new ymaps.Placemark(coordinates, {
+                                    hintContent: "Невский проспект, 21",
+                                    balloonContent: "Невский проспект, 21, Санкт-Петербург"
+                                });
+
+                                map.geoObjects.add(placemark);
+                                map.setCenter(coordinates, 15);
+                            }
+                        })
+                        .catch(error => console.error('Ошибка геокодинга:', error));
+                }
+            </script>            
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="copy__nav">
+                    <div class="copy__nav-text">© 2024 Хвост и Лапки. Все права защищены.</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://api-maps.yandex.ru/v3/?apikey=196164d1-1729-4e21-939d-c475eec4e92c&lang=ru_RU"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
