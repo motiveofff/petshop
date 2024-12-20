@@ -6,7 +6,8 @@ const { Pool } = require("pg");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 const path = require('path');
 
@@ -21,11 +22,12 @@ app.get('/', (req, res) => {
 
 // Настройка подключения к базе данных
 const pool = new Pool({
-    connectionString: "postgresql://postgres:ybouioztekYRZOwDhuCVUWDDrYwfGYgB@junction.proxy.rlwy.net:43499/railway",
+    connectionString: process.env.DATABASE_URL,
     ssl: {
-        rejectUnauthorized: false, // Включите SSL для безопасности
+        rejectUnauthorized: false,
     },
 });
+
 
 // Middleware
 app.use(bodyParser.json());
