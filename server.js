@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 // Настройка подключения к базе данных
 const pool = new Pool({
-    connectionString: "postgresql://postgres:TLcTxBzltZdjZjMIAYRfgyhRYnbSBszz@autorack.proxy.rlwy.net:23303/railway",
+    connectionString: "postgresql://postgres:ybouioztekYRZOwDhuCVUWDDrYwfGYgB@junction.proxy.rlwy.net:43499/railway",
     ssl: {
         rejectUnauthorized: false, // Включите SSL для безопасности
     },
